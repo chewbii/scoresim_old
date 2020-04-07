@@ -1,0 +1,10 @@
+#!/bin/sh
+
+docker cp analyzer/ngram_synonyms.txt 93baa3e7cfc4:/home/elasticsearch/elasticsearch/config/analysis/
+echo "stop elasticsearch"
+curl -XPOST -H "Content-Type: application/json" http://localhost:9200/scorelib/_close
+echo "\nimport synonyms"
+cd analyzer ; curl -XPUT -H "Content-Type: application/json" http://localhost:9200/scorelib/_settings -d @analyzer.json
+echo "\nstart elasticsearch"
+curl -XPOST -H "Content-Type: application/json" http://localhost:9200/scorelib/_open
+echo "\n"
