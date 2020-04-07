@@ -1,3 +1,7 @@
+ScoreSim is plugin for Elasticsearch that allows to produce ranking scores for musical notation based on time warping transformations.
+You can find the related scientific publication here: https://ismir2019.ewi.tudelft.nl/?q=accepted-papers#paper_9
+This work has been funded by the ANR project MuNiR: http://munir.cnam.fr/
+
 ###### plugin configuration 
 https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-scripting-engine.html
 
